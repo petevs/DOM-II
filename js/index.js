@@ -2,7 +2,7 @@
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
-  link.addEventListener("mouseover", () => {
+  link.addEventListener("mouseover", (e) => {
     link.style.cssText =
       "color: #F69C08;transform: scale(1.2);transition: all 0.5s ease; font-weight: 800;font-style: oblique;";
   });
@@ -60,9 +60,22 @@ document.addEventListener("keydown", (e) => {
 });
 
 // EVENT #7:
+const contentImg = document.querySelector(".img-content img");
+contentImg.addEventListener("dblclick", () => {
+  console.log("hello");
+});
+
 // EVENT #8:
 // EVENT #9:
 // EVENT #10:
 
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
+
 // * [ ] Stop the navigation items from refreshing the page by using `preventDefault()
+// navLinks created in event #1
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault;
+  });
+});
