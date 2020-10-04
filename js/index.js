@@ -52,7 +52,13 @@ heroImage.addEventListener("dblclick", () => {
   randomBus(heroImage);
 });
 
-// EVENT #6:
+// EVENT #6: On "keydown" ArrowLeft or ArrowRight generate random hero image of bus
+document.addEventListener("keydown", (e) => {
+  if ((e.key === "ArrowLeft") | (e.key === "ArrowRight")) {
+    randomBus(heroImage);
+  }
+});
+
 // EVENT #7:
 // EVENT #8:
 // EVENT #9:
