@@ -1,4 +1,4 @@
-// // * `mouseover`
+// EVENT #1: On "mouseover" of navigation link transform scale to 1.2x and change color to #F69C08;
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
@@ -11,26 +11,21 @@ navLinks.forEach((link) => {
   });
 });
 
-// // * `keydown`
-
-// // * `wheel`
-
-// // * `load`
+// EVENT #2: On "load" change the width of the logo to 800
 const logo = document.querySelector("h1.logo-heading");
 window.addEventListener("load", () => {
   logo.style.fontWeight = "800";
 });
 
-// // * `focus`
-
-// On resize change .content-destination to 100% width
+//EVENT #3: On resize change .content-destination to 100% width
 const contentDestination = document.querySelector(".home .content-destination");
 const destinationImage = document.querySelector(".content-destination img");
 window.addEventListener("resize", () => {
   contentDestination.style.width = "100%";
   destinationImage.style.width = "100%";
 });
-// // * `scroll`
+
+// EVENT #4: On "scroll" change header border color to #F69C08"
 
 const mainNav = document.querySelector(".main-navigation");
 
@@ -38,11 +33,7 @@ window.addEventListener("scroll", () => {
   mainNav.style.borderBottom = "3px dashed #F69C08";
 });
 
-// // * `select`
-
-// 1. Using `dblclick`
-
-//When main image double clicked insert a random image of a bus
+// EVENT #5: On "dblclick" of hero image insert a random image of a bus
 
 const busImages = [
   "https://images.unsplash.com/photo-1554460196-e6afa9dc66b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -61,9 +52,11 @@ heroImage.addEventListener("dblclick", () => {
   randomBus(heroImage);
 });
 
-// On key left or right
-
-// // * `drag / drop`
+// EVENT #6:
+// EVENT #7:
+// EVENT #8:
+// EVENT #9:
+// EVENT #10:
 
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
 // * [ ] Stop the navigation items from refreshing the page by using `preventDefault()
