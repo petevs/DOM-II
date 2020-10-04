@@ -17,15 +17,19 @@ navLinks.forEach((link) => {
 
 // // * `load`
 const logo = document.querySelector("h1.logo-heading");
-
 window.addEventListener("load", () => {
   logo.style.fontWeight = "800";
 });
 
 // // * `focus`
 
-// // * `resize`
-
+// On resize change .content-destination to 100% width
+const contentDestination = document.querySelector(".home .content-destination");
+const destinationImage = document.querySelector(".content-destination img");
+window.addEventListener("resize", () => {
+  contentDestination.style.width = "100%";
+  destinationImage.style.width = "100%";
+});
 // // * `scroll`
 
 const mainNav = document.querySelector(".main-navigation");
