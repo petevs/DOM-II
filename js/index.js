@@ -1,4 +1,4 @@
-// EVENT #1: On "mouseover" of navigation link transform scale to 1.2x and change color to #F69C08;
+// EVENT #1&2: On "mouseover" and "mouseout" of navigation link transform scale to 1.2x and change color to #F69C08;
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
@@ -11,13 +11,13 @@ navLinks.forEach((link) => {
   });
 });
 
-// EVENT #2: On "load" change the width of the logo to 800
+// EVENT #3: On "load" change the width of the logo to 800
 const logo = document.querySelector("h1.logo-heading");
 window.addEventListener("load", () => {
   logo.style.fontWeight = "800";
 });
 
-//EVENT #3: On resize change .content-destination to 100% width
+//EVENT #4: On resize change .content-destination to 100% width
 const contentDestination = document.querySelector(".home .content-destination");
 const destinationImage = document.querySelector(".content-destination img");
 window.addEventListener("resize", () => {
@@ -25,7 +25,7 @@ window.addEventListener("resize", () => {
   destinationImage.style.width = "100%";
 });
 
-// EVENT #4: On "scroll" change header border color to #F69C08"
+// EVENT #5: On "scroll" change header border color to #F69C08"
 
 const mainNav = document.querySelector(".main-navigation");
 
@@ -33,7 +33,7 @@ window.addEventListener("scroll", () => {
   mainNav.style.borderBottom = "3px dashed #F69C08";
 });
 
-// EVENT #5: On "dblclick" of hero image insert a random image of a bus
+// EVENT #6: On "dblclick" of hero image insert a random image of a bus
 
 const busImages = [
   "https://images.unsplash.com/photo-1554460196-e6afa9dc66b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
@@ -52,24 +52,57 @@ heroImage.addEventListener("dblclick", () => {
   randomBus(heroImage);
 });
 
-// EVENT #6: On "keydown" ArrowLeft or ArrowRight generate random hero image of bus
+// EVENT #7: On "keydown" ArrowLeft or ArrowRight generate random hero image of bus
 document.addEventListener("keydown", (e) => {
   if ((e.key === "ArrowLeft") | (e.key === "ArrowRight")) {
     randomBus(heroImage);
   }
 });
 
-// EVENT #7:
-const contentImg = document.querySelector(".img-content img");
-contentImg.addEventListener("dblclick", () => {
-  console.log("hello");
+// EVENT #8: On "wheel" turn header background black and text white
+const header = document.querySelector("header");
+document.addEventListener("wheel", (e) => {
+  header.style.backgroundColor = "#000";
+  header.style.color = "#fff";
+  e.stopPropagation();
 });
 
-// EVENT #8:
-// EVENT #9:
-// EVENT #10:
+navLinks.forEach((link) => {
+  document.addEventListener("wheel", (e) => {
+    link.style.color = "#fff";
+  });
+});
+
+// EVENT #9:On click of content pick/destination section change background colors.
 
 // * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
+const contentPick = document.querySelector(".content-pick");
+const destination = document.querySelector(".destination");
+
+contentPick.addEventListener("click", (e) => {
+  contentPick.style.backgroundColor = "#000";
+  contentPick.style.color = "#fff";
+  contentPick.style.padding = "20px";
+  e.stopPropagation();
+});
+
+destination.addEventListener("click", (e) => {
+  destination.style.backgroundColor = "#F69C08";
+  destination.style.padding = "10px";
+  e.stopPropagation();
+});
+
+// EVENT #10&11: On "mousedown" on any paragraph change color to #F69C08 and on "mouseup" change back to inherit
+const paragraphs = document.querySelectorAll("p");
+
+paragraphs.forEach((paragraph) => {
+  paragraph.addEventListener("mousedown", (e) => {
+    paragraph.style.color = "#F69C08";
+  });
+  paragraph.addEventListener("mouseup", (e) => {
+    paragraph.style.color = "inherit";
+  });
+});
 
 // * [ ] Stop the navigation items from refreshing the page by using `preventDefault()
 // navLinks created in event #1
